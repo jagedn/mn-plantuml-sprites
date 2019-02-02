@@ -1,4 +1,4 @@
-# Puravid PlantUML sprites
+# Micronaut PlantUML sprites
 
 This repository contains PlantUML sprites which can easily be used in PlantUML diagrams for nice visual representation of popular technologies.
 
@@ -49,7 +49,7 @@ api --> users
 @enduml
 ```
 
-![Example](https://www.plantuml.com/plantuml/png/ZP7FQXin4CRlUWebzEhTzbgAIQ216demSTDJBsFjUArO6edHoA5lNrdo1Y-qIm_Bpf-VlaypUaW2BDaxTJVWmHBgtVPvy-Dfz_ByNHz5OlhSzmnltMZbcFSv8Pj0WYIT2RvqzkYG1kYDBVLLT40NjLMAR0LJV_xKVUoloRl5zkVcw-F_6Rp2Y0Fr_Y_I7f8WzrEgr9qbu_A0cTtD54NY35qi9_y564W9QE1bYiA0hsaHES7Xj2mYmHkGHIGXdv4NaVXRZe4QCcEcnVRU6Wu4MQwGM76elw5pGQbqiXI1mMiVA9WZ1uzQEADIO2ImVad8Yj48q5YEtN_vq8PV_w8tt4ECzngIRg6QW-_6XNtSRYe8qIfBWdm0Kw6wfm8ydP4aLQQMrC4sbRQ3GkmaC8nO4SOOvcQNbosG0G4NnWfTupdNzbN8N8IRNusKkaogL-jfblRJgrAvNBfyfJaPnw1lwbstRfTkLEbCrbFUB1wGXkpT7m00)
+![Example](example.png)
 
 
 ## Note

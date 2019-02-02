@@ -1,0 +1,11 @@
+pages:
+  stage: deploy
+  script:
+    - mkdir public
+    - cp -r sprites/* public
+  artifacts:
+    paths:
+      - public
+
+
+

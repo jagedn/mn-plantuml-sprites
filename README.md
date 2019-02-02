@@ -17,27 +17,26 @@ Example:
 !define PVIDAURL https://raw.githubusercontent.com/jagedn/mn-plantuml-sprites/master/sprites/
 
 !includeurl SPRITESURL/java.puml
-!includeurl SPRITESURL/cassandra.puml
 !includeurl SPRITESURL/nodejs.puml
 !includeurl SPRITESURL/kafka.puml
 !includeurl SPRITESURL/tomcat.puml
-!includeurl SPRITESURL/server.puml
-!includeurl SPRITESURL/python.puml
 
 !includeurl PVIDAURL/micronaut.puml
+!includeurl PVIDAURL/groovy16.puml
+!includeurl PVIDAURL/grails.puml
+
 
 title Hello
 
-skinparam monochrome true
 
 actor User
 rectangle "<$nodejs>\nwebapp" as webapp
 
-rectangle "<$micronaut>\nAPI" as api
+rectangle "<$micronaut>\n<$java>\nAPI" as api
 interface "<$kafka>\nEvents" as kafka
-file "<$server>\nStorage" as repo
-rectangle "<$java>\ncatalog" as catalog
-rectangle "<$python>\nusers" as users
+file "<$groovy>\nStorage" as repo
+rectangle "<$tomcat>\n<$java>\ncatalog" as catalog
+rectangle "<$grails>\nusers" as users
 
 User -> webapp
 webapp --> api
@@ -46,6 +45,7 @@ repo -> api
 api ..> kafka
 api --> catalog
 api --> users
+kafka <. users
 @enduml
 ```
 

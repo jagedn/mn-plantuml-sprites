@@ -13,32 +13,43 @@ Example:
 
 ```
 @startuml
-!define PURAVIDAURL https://gitlab.com/puravida-asciidoctor/plantuml-sprites/raw/master/sprites
 !define SPRITESURL https://raw.githubusercontent.com/rabelenda/cicon-plantuml-sprites/v1.0/sprites
+!define PVIDAURL https://raw.githubusercontent.com/jagedn/mn-plantuml-sprites/master/sprites/
 
-!includeurl SPRITESURL/tomcat.puml
-!includeurl SPRITESURL/kafka.puml
 !includeurl SPRITESURL/java.puml
 !includeurl SPRITESURL/cassandra.puml
-!includeurl PURAVIDAURL/micronaut16z.puml
+!includeurl SPRITESURL/nodejs.puml
+!includeurl SPRITESURL/kafka.puml
+!includeurl SPRITESURL/tomcat.puml
+!includeurl SPRITESURL/server.puml
+!includeurl SPRITESURL/python.puml
 
-title Micronaut example
+!includeurl PVIDAURL/micronaut.puml
+
+title Hello
 
 skinparam monochrome true
 
-rectangle "<$tomcat>\nwebapp" as webapp
-queue "<$kafka>" as kafka
-rectangle "<$java>\ndaemon" as daemon
-database "<$cassandra>" as cassandra
+actor User
+rectangle "<$nodejs>\nwebapp" as webapp
 
-webapp -> kafka
-kafka -> daemon
-daemon --> cassandra 
+rectangle "<$micronaut>\nAPI" as api
+interface "<$kafka>\nEvents" as kafka
+file "<$server>\nStorage" as repo
+rectangle "<$java>\ncatalog" as catalog
+rectangle "<$python>\nusers" as users
 
+User -> webapp
+webapp --> api
+api -> repo
+repo -> api
+api ..> kafka
+api --> catalog
+api --> users
 @enduml
 ```
 
-![Example](https://www.planttext.com/plantuml/img/XL7BJiCm4BpxAzoAQv8xGb4bn0690shXXeGszZPnunVsclBvs4vKbGDmMNbsnpCxzYuI14f6CxQHU5GM-U5v__ZoS7X_tJ_nYSZ7swuBS6v7HLCQKiGWd2Mqr0fdycH0ZLP29rJkDrw3BNfDz44Hniv090pT2jb6MQ6Jn1JqjLD7pWYWrfTLVkFCS9pXRye9FlzX28WHh0mhZP4YZVnUkoILZMgSYA-xSlm2upKo5cTbFGGmt3Zhn1ISGKuXvL50GM37BB6zkrb2z6-Mdt40xxSS8b-Qx2DXggIQeg-ZUlmfKG8K0GcOlIghj9W4WW5YvLmYB2eNcCDKBzxqgtIj1LQDKdYJqTMDNVwx-WwCVGC0)
+![Example](https://www.plantuml.com/plantuml/png/ZP7FQXin4CRlUWebzEhTzbgAIQ216demSTDJBsFjUArO6edHoA5lNrdo1Y-qIm_Bpf-VlaypUaW2BDaxTJVWmHBgtVPvy-Dfz_ByNHz5OlhSzmnltMZbcFSv8Pj0WYIT2RvqzkYG1kYDBVLLT40NjLMAR0LJV_xKVUoloRl5zkVcw-F_6Rp2Y0Fr_Y_I7f8WzrEgr9qbu_A0cTtD54NY35qi9_y564W9QE1bYiA0hsaHES7Xj2mYmHkGHIGXdv4NaVXRZe4QCcEcnVRU6Wu4MQwGM76elw5pGQbqiXI1mMiVA9WZ1uzQEADIO2ImVad8Yj48q5YEtN_vq8PV_w8tt4ECzngIRg6QW-_6XNtSRYe8qIfBWdm0Kw6wfm8ydP4aLQQMrC4sbRQ3GkmaC8nO4SOOvcQNbosG0G4NnWfTupdNzbN8N8IRNusKkaogL-jfblRJgrAvNBfyfJaPnw1lwbstRfTkLEbCrbFUB1wGXkpT7m00)
 
 
 ## Note
